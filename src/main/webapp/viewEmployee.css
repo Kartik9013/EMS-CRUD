@@ -1,0 +1,191 @@
+@charset "UTF-8";
+/* view employee file*/
+/* Google Font */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Inter', sans-serif;
+}
+/* Background */
+body {
+    background: linear-gradient(135deg, #0052D4, #4364F7, #6FB1FC);
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 80px;
+}
+/* Navigation Bar */
+nav {
+    width: 100%;
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    position: fixed;
+    top: 0;
+    left: 0;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: 15px 20px;
+    z-index: 1000;
+    border-bottom: 2px solid rgba(255, 255, 255, 0.3);
+}
+nav a {
+    text-decoration: none;
+    color: white;
+    font-weight: 600;
+    padding: 10px 16px;
+    transition: 0.3s ease-in-out;
+    border-radius: 8px;
+}
+
+nav a:hover {
+    background: rgba(255, 255, 255, 0.2);
+}
+/* Page Heading */
+h2 {
+    color: white;
+    font-size: 24px;
+    font-weight: bold;
+    margin-top: 20px;
+    text-align: center;
+}
+/* Message Box */
+.success, .error {
+    padding: 12px;
+    margin: 15px auto;
+    width: 50%;
+    text-align: center;
+    font-weight: bold;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+.success {
+    background-color: rgba(40, 167, 69, 0.2);
+    color: #28a745;
+    border: 1px solid #28a745;
+}
+.error {
+    background-color: rgba(220, 53, 69, 0.2);
+    color: #dc3545;
+    border: 1px solid #dc3545;
+}
+/* Employee Table */
+.table-container {
+    width: 100%;
+    overflow-x: auto; /* Allows scrolling when content overflows */
+    max-width: 90vw; /* Limits the width */
+    margin: 20px auto;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+    table-layout: auto;
+}
+thead {
+    background-color: rgba(255, 255, 255, 0.2);
+    color: white;
+    font-weight: bold;
+}
+th, td {
+    padding: 12px;
+    text-align: center;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+    color: white;
+    
+    white-space: normal; /* Allows wrapping */
+    word-break: break-word;
+
+}
+
+tr:nth-child(even) {
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+tr:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+    transition: 0.3s ease-in-out;
+}
+
+/* Action Buttons */
+.action-container {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    flex-wrap: wrap;
+     max-width: 100%; /* Prevents overflowing */
+}
+
+.action-btn {
+    padding: 6px 12px;
+    text-decoration: none;
+    border-radius: 6px;
+    font-size: 14px;
+    font-weight: bold;
+    transition: 0.3s ease-in-out;
+     min-width: 80px; /* Prevents buttons from shrinking */
+    text-align: center;
+}
+
+.edit-btn {
+    background: linear-gradient(120deg, #007bff, #0056b3);
+    color: white;
+}
+
+.edit-btn:hover {
+    background: linear-gradient(120deg, #0056b3, #004080);
+    transform: scale(1.05);
+}
+
+.delete-btn {
+    background: linear-gradient(120deg, #dc3545, #a71d2a);
+    color: white;
+}
+
+.delete-btn:hover {
+    background: linear-gradient(120deg, #a71d2a, #7f1320);
+    transform: scale(1.05);
+}
+
+/* Mobile Responsive */
+@media (max-width: 768px) {
+  .table-container {
+        overflow-x: auto; /* Allow horizontal scrolling */
+    }
+
+    table {
+        display: block;
+        width: 100%;
+        overflow-x: auto;
+        white-space: nowrap; /* Prevents text from squishing */
+    }
+
+    thead {
+        display: table-header-group; /* Keep headers visible */
+    }
+
+    td {
+        display: table-cell;
+        text-align: center;
+    }
+
+    td::before {
+        content: attr(data-label);
+        font-weight: bold;
+        color: #fff;
+    }
+
+    .action-container {
+        flex-direction: column;
+        align-items: center;
+    }
+}

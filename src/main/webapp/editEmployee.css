@@ -1,0 +1,142 @@
+@charset "UTF-8";
+/*edit employee CSS file*/
+
+ @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Inter', sans-serif;
+}
+body {
+    background: linear-gradient(135deg, #0052D4, #4364F7, #6FB1FC);
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+/* Navigation Bar */
+nav {
+    width: 100%;
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    position: fixed;
+    top: 0;
+    left: 0;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: 15px 20px;
+    z-index: 1000;
+    border-bottom: 2px solid rgba(255, 255, 255, 0.3);
+}
+nav a {
+    text-decoration: none;
+    color: white;
+    font-weight: 600;
+    padding: 10px 16px;
+    transition: 0.3s ease-in-out;
+    border-radius: 8px;
+}
+
+nav a:hover {
+    background: rgba(255, 255, 255, 0.2);
+}
+
+/* Form Container */
+.container {
+    background: rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(10px);
+    padding: 25px;
+    border-radius: 12px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+    width: 50%;
+    max-width: 600px;
+    text-align: center;
+}
+
+h2 {
+    color: white;
+    margin-bottom: 15px;
+}
+
+/* Form Fields */
+label {
+    display: block;
+    text-align: left;
+    margin-top: 10px;
+    font-weight: bold;
+    color: white;
+}
+
+input {
+    width: 100%;
+    padding: 8px;
+    margin-top: 5px;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    border-radius: 6px;
+    background: rgba(255, 255, 255, 0.2);
+    color: white;
+    font-size: 14px;
+}
+
+input:focus {
+    border-color: white;
+    outline: none;
+}
+
+/* Buttons */
+.btn-container {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 15px;
+}
+
+.btn {
+    padding: 8px 16px;
+    border: none;
+    border-radius: 6px;
+    font-weight: bold;
+    text-decoration: none;
+    text-align: center;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.btn[type="submit"] {
+    background: linear-gradient(120deg, #007bff, #0056b3);
+    color: white;
+}
+
+.btn[type="submit"]:hover {
+    background: linear-gradient(120deg, #0056b3, #004080);
+}
+
+.btn-danger {
+    background: linear-gradient(120deg, #dc3545, #a71d2a);
+    color: white;
+}
+
+.btn-danger:hover {
+    background: linear-gradient(120deg, #a71d2a, #7f1320);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .container {
+        width: 90%;
+        padding: 20px;
+    }
+
+    input {
+        font-size: 12px;
+    }
+
+    .btn-container {
+        flex-direction: column;
+        gap: 10px;
+    }
+}
+    
