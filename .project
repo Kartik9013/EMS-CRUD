@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <projectDescription>
-	<name>EMS</name>
+	<name>EMS-CRUD</name>
 	<comment></comment>
 	<projects>
 		<project>mysql-connector-java-8.0.30</project>
